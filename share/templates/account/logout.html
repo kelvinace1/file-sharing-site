@@ -1,0 +1,17 @@
+{% extends 'send/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form action="{[url 'account_logout" method="post">
+   {% csrf_token %}
+   {{form|crispy}}
+ 
+   <div>
+      <button class="btn btn danger" type="submit">logout</button>
+   </div>
+</form>
+
+ 
+        
+
+{% endblock content %}

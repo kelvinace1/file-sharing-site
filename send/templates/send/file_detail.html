@@ -1,0 +1,60 @@
+{% extends 'send/base.html' %}
+
+{% block content %}
+
+<div
+id="carouselMultiItemExample"
+class="carousel slide carousel-dark text-center"
+data-mdb-ride="carousel"
+>
+<!-- Controls -->
+<div class="d-flex justify-content-center mb-4">
+  <button
+    class="carousel-control-prev position-relative"
+    type="button"
+    data-mdb-target="#carouselMultiItemExample"
+    data-mdb-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next position-relative"
+    type="button"
+    data-mdb-target="#carouselMultiItemExample"
+    data-mdb-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Inner -->
+
+<div class="carousel-inner py-4">
+  <!-- Single item -->
+  <div class="carousel-item active">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card">
+            <img
+              src="{{file.thumbnail.url}}"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{object.title}}</h5>
+              <p class="card-text">
+                {{object.description}}
+              </p>.
+              <a href="{% url 'file_update' file.id %}">update</a>
+              <a href="{{object.file.url}}"  class="btn btn-primary" download="txt">Download</a>
+            </div>
+          </div>
+        </div>
+        <h1>{{objectfile.url}}</h1>
+      
+
+        
+
+{% endblock content %}

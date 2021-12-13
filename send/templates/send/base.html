@@ -1,0 +1,108 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolShare</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}" >Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'files' %}">Files</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'file_create' %}">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_files' %}">My Files</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Charts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login/<a href="{% url 'account_signup' %}">Signup</a></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	<div class="text-success">
+	{% if messages %}
+	{% for message in messages %}
+	<h3>{{message}}</h3>
+	{% endfor %}
+	{% endif %}
+	</div>
+
+<div class="container">
+    {% block content %} {%endblock content %}
+</div>
+
+
+<div>
+<footer class="bg-dark text-center text-white">
+	<!-- Grid container -->
+	<div class="container p-4 pb-0">
+	  <!-- Section: Social media -->
+	  <section class="mb-4">
+		<!-- Facebook -->
+		<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+		  ><i class="fab fa-facebook-f"></i
+		></a>
+  
+		<!-- Twitter -->
+		<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+		  ><i class="fab fa-twitter"></i
+		></a>
+  
+		<!-- Google -->
+		<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+		  ><i class="fab fa-google"></i
+		></a>
+  
+		<!-- Instagram -->
+		<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+		  ><i class="fab fa-instagram"></i
+		></a>
+  
+		<!-- Linkedin -->
+		<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+		  ><i class="fab fa-linkedin-in"></i
+		></a>
+  
+		<!-- Github -->
+		<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+		  ><i class="fab fa-github"></i
+		></a>
+	  </section>
+	  <!-- Section: Social media -->
+	</div>
+	<!-- Grid container -->
+  
+	<!-- Copyright -->
+	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+	  © 2020 Copyright:
+	  <a class="text-white" href="{% url 'home' %}">SchoolShare</a>
+	</div>
+	<!-- Copyright -->
+  </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
